@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Welcome to CodeIgniter</title>
 
 	<style type="text/css">
@@ -66,6 +67,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
+
+<div>
+<?php print_r($this->router->routes); ?>
+</div>
 
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
