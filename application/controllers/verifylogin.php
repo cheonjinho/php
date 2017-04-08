@@ -5,12 +5,19 @@ class VerifyLogin extends CI_Controller {
  function __construct()
  {
    parent::__construct();
+   $this->load->library('session');
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->helper('html');
+		$this->load->database();
+		$this->load->library('form_validation');
    $this->load->model('user','',TRUE);
  }
  
  function index()
  {
    //This method will have the credentials validation
+ 	 $this->load->helper('security');
    $this->load->library('form_validation');
  
    $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
@@ -24,7 +31,7 @@ class VerifyLogin extends CI_Controller {
    else
    {
      //Go to private area
-     redirect('home', 'refresh');
+		redirect('home', 'refresh');
    }
  
  }
